@@ -5,11 +5,11 @@ type ThemeType = "light" | "dark"
 
 type ThemeContextType = {
     theme: ThemeType,
-    setTheme: React.Dispatch<React.SetStateAction<ThemeType>>
+    setTheme?: React.Dispatch<React.SetStateAction<ThemeType>>
 }
 
 
-const ThemeContext = createContext<ThemeContextType | null>(null)
+export const ThemeContext = createContext<ThemeContextType>({theme: "light"})
 
 export const ThemeContextProvider = ({children} : {children: React.ReactNode}) => {
 
