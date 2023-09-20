@@ -10,9 +10,9 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.background};
   color: #000;
-  font-family: "Nuno Sans";
+  font-family: "Nunito Sans";
   overflow-x: hidden;
 }
 `

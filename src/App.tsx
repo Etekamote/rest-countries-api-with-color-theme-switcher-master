@@ -16,7 +16,7 @@ function App() {
   
 <ThemeProvider theme={theme}>
     <GlobalStyles />
-    <Header setTheme={setTheme}/>
+    <Header setTheme={setTheme} theme={theme}/>
     </ThemeProvider>
   );
 }
