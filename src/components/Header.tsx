@@ -15,7 +15,7 @@ type HeaderProps = {
 const StyledHeader = styled.header`
 background-color: ${({ theme }) => theme.colors.elements};
 color: ${({theme}) => theme.colors.text};
-padding: 0 1rem;
+padding: 0 2rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
