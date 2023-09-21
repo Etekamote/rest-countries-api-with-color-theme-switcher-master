@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import {styled} from "styled-components"
 import { ThemeType } from '../styles/Theme';
+import { light, dark } from '../styles/Theme';
 
 
 type HeaderProps = {
@@ -24,7 +25,7 @@ box-shadow: -1px 6px 7px -9px rgba(175, 175, 175, 1);
 
 const StyledTitle = styled.h1`
 font-weight: 800;
-font-size: 14px;
+font-size: 16px;
 `
 
 const StyledThemeSwitch = styled.span`
@@ -37,10 +38,16 @@ color: ${({theme}) => theme.colors.text}
 `
 
 export const Header = ({setTheme, theme} : HeaderProps) => {
+
+
+  const handleSwitch = () =>{
+    theme.name === "light" ? setTheme(dark) : setTheme(light)
+  }
+
   return (
     <StyledHeader>
         <StyledTitle>Where in the world?</StyledTitle>
-        <StyledThemeSwitch>
+        <StyledThemeSwitch onClick={handleSwitch}>
             {theme.name === "light" ? <div><StyledIcon icon={faMoon} /> Dark Mode</div> : <div><StyledIcon icon={faSun} />Light Mode</div>}
         </StyledThemeSwitch>
     </StyledHeader>
