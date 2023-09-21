@@ -19,13 +19,13 @@ padding: 0 1rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
-height: 50px;
-box-shadow: -1px 6px 7px -9px rgba(175, 175, 175, 1);
+height: 80px;
+box-shadow: ${({theme}) => theme.name === "light" ? "-1px 6px 7px -9px rgba(175, 175, 175, 1)" : "-1px 6px 7px -9px rgba(43, 43, 43, 1)"};
 `
 
 const StyledTitle = styled.h1`
 font-weight: 800;
-font-size: 16px;
+font-size: 14px;
 `
 
 const StyledThemeSwitch = styled.span`
