@@ -21,6 +21,9 @@ justify-content: space-between;
 align-items: center;
 height: 80px;
 box-shadow: ${({theme}) => theme.name === "light" ? "-1px 6px 7px -9px rgba(175, 175, 175, 1)" : "-1px 6px 7px -9px rgba(43, 43, 43, 1)"};
+@media (min-width: 800px) {
+  padding: 0 5rem;
+}
 `
 
 const StyledTitle = styled.h1`
@@ -31,6 +34,7 @@ font-size: 14px;
 const StyledThemeSwitch = styled.span`
 font-weight: 600;
 font-size: 12px;
+cursor: pointer;
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`

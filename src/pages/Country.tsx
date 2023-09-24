@@ -8,6 +8,9 @@ import {styled} from "styled-components"
 const StyledContainer = styled.div`
 padding: 0 2rem;
 margin-top: 4rem;
+@media (min-width: 800px) {
+    padding: 0 5rem;
+  }
 `
 
 
@@ -27,9 +30,16 @@ const StyledContent = styled.section`
 display: flex;
 flex-direction: column;
 margin-top: 5rem;
+@media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 const StyledImg = styled.img`
 width: 100%;
+@media (min-width: 800px) {
+    width: 50%;
+  }
 `
 const StyledRight = styled.div`
 display: flex;
@@ -44,6 +54,9 @@ const StyledInfo = styled.div`
 display: flex;
 flex-direction: column;
 gap: 5rem;
+@media (min-width: 800px) {
+    flex-direction: row;
+  }
 `
 
 const StyledInfoPart = styled.div``
