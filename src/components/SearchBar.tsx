@@ -5,7 +5,7 @@ import {styled} from 'styled-components'
 
 
 const StyledBar = styled.div`
-margin: 2rem 2rem;
+
 background-color: ${({theme}) => theme.colors.input};
 box-shadow: ${({theme}) => theme.name === "light" ?"2px 3px 15px -3px rgba(220, 220, 220, 1)" : "2px 3px 15px -3px rgba(43, 43, 43, 1);" } ;
 display: flex;

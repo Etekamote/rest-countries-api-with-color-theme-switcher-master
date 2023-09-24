@@ -3,6 +3,7 @@ import { SearchBar } from '../components/SearchBar';
 import {useQuery} from "@tanstack/react-query"
 import { CountryCard } from '../components/CountryCard';
 import {styled} from "styled-components"
+import { Select } from '../components/Select';
 
 
 
@@ -13,12 +14,22 @@ padding: 0 5rem;
 `
 
 const StyledFilters = styled.div`
+padding: 2rem;
 display: flex;
 flex-direction: column;
+gap: 2rem;
 `
 
 
+
+
+
 export const Home = () => {
+
+    
+
+      
+
     const [searchedCountry, setSearchedCountry] = useState("")
     const [region, setRegion] = useState("")
     const {data, isLoading, isError, refetch} = useQuery({
@@ -54,6 +65,7 @@ export const Home = () => {
     <>
     <StyledFilters>
         <SearchBar setSearchedCountry = {setSearchedCountry} />
+        <Select setRegion={setRegion}/>
         </StyledFilters>
     
     <StyledMain>
