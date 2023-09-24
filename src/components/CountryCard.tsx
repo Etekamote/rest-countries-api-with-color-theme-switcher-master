@@ -1,5 +1,6 @@
 import React from 'react'
 import {styled} from "styled-components"
+import { Link } from 'react-router-dom'
 
 
 type CountryCardProps = {
@@ -40,8 +41,12 @@ const StyledContent = styled.div`
 padding: 2rem;
 font-size: 1.2rem;
 `
-const StyledH2 = styled.h2`
+const StyledName = styled(Link)`
 margin-bottom: 2rem;
+text-decoration: none;
+color: ${({theme}) => theme.colors.text};
+font-size: 1.8rem;
+font-weight: 600;
 `
 
 const StyledInfoName = styled.div`
@@ -57,7 +62,7 @@ export const CountryCard = ({data} : {data: CountryCardProps}) => {
     <StyledCard>
         <StyledImg src={data.flag} alt={data.flagAlt} />
         <StyledContent>
-            <StyledH2>{data.name}</StyledH2>
+            <StyledName to={`/country/${data.name.toLowerCase()}`}>{data.name}</StyledName>
             <StyledInfoName>Population: <StyledInfo>{data.population}</StyledInfo></StyledInfoName>
             <StyledInfoName>Region: <StyledInfo>{data.region}</StyledInfo></StyledInfoName>
            {data.capital && <StyledInfoName>Capital: <StyledInfo>{data.capital}</StyledInfo></StyledInfoName>}

@@ -1,13 +1,14 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import {styled} from "styled-components"
 
 
 const StyledContainer = styled.div`
 padding: 0 2rem;
 margin-top: 4rem;
+color: ${({theme}) => theme.colors.text};
 @media (min-width: 800px) {
     padding: 0 5rem;
   }
@@ -44,6 +45,10 @@ width: 100%;
 const StyledRight = styled.div`
 display: flex;
 flex-direction: column;
+@media (min-width: 800px) {
+    width: 50%;
+    margin-left: 4rem
+  }
 `
 const StyledName = styled.h2`
 font-weight: 800;
@@ -54,16 +59,22 @@ const StyledInfo = styled.div`
 display: flex;
 flex-direction: column;
 gap: 5rem;
+
 @media (min-width: 800px) {
     flex-direction: row;
+    justify-content: space-between;
+    
   }
 `
 
-const StyledInfoPart = styled.div``
+const StyledInfoPart = styled.div`
+width: 40%;
+`
 const StyledInfoItem = styled.span`
 display: flex;
 gap: 1rem;
 font-weight: 800;
+margin-top: 1rem;
 `
 const Info = styled.span`
 font-weight: 300;
@@ -103,7 +114,6 @@ export const Country = () => {
         return <h2>Error</h2>
     }
 
-    console.log(data)
 
     const currencies:any[] = []
     const  languages:string[] = []
@@ -120,7 +130,7 @@ export const Country = () => {
    
   return (
    <StyledContainer>
-    <StyledButton><StyledIcon icon={faArrowLeft} />Back</StyledButton>
+    <Link to="/"><StyledButton><StyledIcon icon={faArrowLeft} />Back</StyledButton></Link>
     {!data.status && <StyledContent>
         <StyledImg src={data[0].flags.png} alt={data[0].flags.alt} />
         <StyledRight>
@@ -147,7 +157,7 @@ export const Country = () => {
                     {data[0].subregion}
                  </Info>
                  </StyledInfoItem>  
-                 {data[0].capital && <StyledInfoItem>Native name:
+                 {data[0].capital && <StyledInfoItem>Capital:
                  <Info>
                     {data[0].capital}
                  </Info>
@@ -173,7 +183,7 @@ export const Country = () => {
         </StyledInfo>
         <StyledBorderCountries>
         <StyledTitle>Border Countries:</StyledTitle>
-        <div>{data[0].borders.map((item: string) => <StyledButton>{item}</StyledButton>)}</div>
+        <div>{data[0].borders && data[0].borders.map((item: string) => <StyledButton key={item}>{item}</StyledButton>)}</div>
         </StyledBorderCountries>
         </StyledRight>
     </StyledContent>}
