@@ -37,7 +37,6 @@ export const Home = () => {
         queryFn: async () => {
             try{
             const response = await fetch(`https://restcountries.com/v3.1/${(searchedCountry && `name/${searchedCountry}`) || (region && `region/${region}`) || `all`}`)
-            // const response = await fetch("https://restcountries.com/v3.1/all")
             const data = await response.json()
             return data
             }
