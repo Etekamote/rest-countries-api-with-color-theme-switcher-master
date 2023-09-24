@@ -15,6 +15,9 @@ border-radius: 5px;
 align-items: center;
 gap: 2rem;
 color: grey;
+@media (min-width: 800px) {
+  width: 40%;
+}
 `
 
 const StyledInput = styled.input`

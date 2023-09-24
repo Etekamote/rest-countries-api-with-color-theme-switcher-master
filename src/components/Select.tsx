@@ -6,6 +6,9 @@ display: flex;
 justify-content: center;
 position: relative;
 width: 50%;
+@media (min-width: 800px) {
+  width: 20%;
+}
 `
 
 const StyledSelect = styled.select`

@@ -27,6 +27,9 @@ box-shadow: ${({theme}) => theme.name === "light" ?"2px 3px 15px -3px rgba(220, 
 height: 300px;
 color: ${({theme}) => theme.colors.text};
 margin-bottom: 4rem;
+@media (min-width: 800px) {
+  width: 22%;
+}
 `
 
 const StyledImg = styled.img`

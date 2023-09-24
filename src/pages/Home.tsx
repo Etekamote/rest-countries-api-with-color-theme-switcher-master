@@ -11,6 +11,11 @@ const StyledMain = styled.main`
 display: flex;
 flex-direction: column;
 padding: 0 5rem;
+@media (min-width: 800px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 `
 
 const StyledFilters = styled.div`
@@ -18,6 +23,11 @@ padding: 2rem;
 display: flex;
 flex-direction: column;
 gap: 2rem;
+@media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+  }
 `
 
 
