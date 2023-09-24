@@ -12,6 +12,11 @@ flex-direction: column;
 padding: 0 5rem;
 `
 
+const StyledFilters = styled.div`
+display: flex;
+flex-direction: column;
+`
+
 
 export const Home = () => {
     const [searchedCountry, setSearchedCountry] = useState("")
@@ -47,7 +52,10 @@ export const Home = () => {
 
   return (
     <>
-    <SearchBar setSearchedCountry = {setSearchedCountry} />
+    <StyledFilters>
+        <SearchBar setSearchedCountry = {setSearchedCountry} />
+        </StyledFilters>
+    
     <StyledMain>
     {!data.status && data.map((item: any) => <CountryCard key={item.name.common} data={{
         name: item.name.common,

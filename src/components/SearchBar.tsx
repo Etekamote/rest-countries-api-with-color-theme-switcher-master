@@ -10,7 +10,7 @@ background-color: ${({theme}) => theme.colors.input};
 box-shadow: ${({theme}) => theme.name === "light" ?"2px 3px 15px -3px rgba(220, 220, 220, 1)" : "2px 3px 15px -3px rgba(43, 43, 43, 1);" } ;
 display: flex;
 padding: 0 2rem;
-height: 3rem;
+height: 5rem;
 border-radius: 5px;
 align-items: center;
 gap: 2rem;
